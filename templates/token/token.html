@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Número de Usuário</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style_token.css') }}>
+</head>
+<body>
+    <div class="container">
+        <h1>Insira atributos para gerar token</h1>
+        <form action="/gerar-token" method="post">
+            <label for="ncliente">Numero Cliente</label>
+            <input type="text" id="ncliente" name="numero_cliente"><br><br>
+            <label for="ncolab">Numero Colaborador</label>
+            <input type="text" id="ncolab" name="numero_colaborador"><br><br>
+            <button type="submit" formmethod="post">Gerar Token</button>
+        </form> 
+    </div>
+</body>
+</html>

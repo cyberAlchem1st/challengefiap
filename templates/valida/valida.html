@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Número de Token</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style_valida.css') }}>
+</head>
+<body>
+    <div class="container">
+        <h1>Inserir token a ser validado:</h1>
+        <form action="/validar-token" method="post">
+            
+            <label for="meunumero">Meu numero:</label>
+            <input type="text" id="meunumero" name="meu_numero"><br><br>
+            
+            <label for="numerosuspeito">Numero suspeito:</label>
+            <input type="text" id="numerosuspeito" name="numero_suspeito"><br><br>
+            
+            <button type="submit" formmethod="post">Validar Token</button>
+    </form> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #11174d, #4B0000);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+    color: #FFFFFF; /* Cor do texto */
+
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+
+input{
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc; /* Cor da borda */
+    border-radius: 5px; /* Borda arredondada */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+  }
+  
+input:focus {
+    outline: none; /* Remove o contorno ao focar */
+    border-color: black; /* Cor da borda ao focar */
+  }
+    
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF; /* Cor do texto */
+    background-color: #ED145B; /* Cor de fundo */
+    border: 2px solid #7F071D; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+    margin-left: 8px;
+  }
+  
+button:hover {
+    background-color: #8B1E3F; /* Mudança de cor ao passar o mouse */
+    border-color: #8B1E3F;
+  }
+
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    
+
+  }
+
+  label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: larger;
+
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+    color: white;
+   
+  }
+
+
+
+  @media(max-width:480px ){
+    form{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+    }
+}
