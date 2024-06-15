@@ -1,17 +1,23 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import os
 
-uri = "mongodb+srv://fiap:paifxpto@fiap.zfhhiqb.mongodb.net/?retryWrites=true&w=majority&appName=fiap"
+user = os.getenv("MONGODB_LOGIN")
+password = os.getenv("MONGODB_PASSWORD")
+endpoint = os.getenv("MONGODB_ENDPOINT")
+
+uri = f"mongodb+srv://{user}:{password}@{endpoint}/?retryWrites=true&w=majority&appName=FIAP"
 cluster = MongoClient(uri, server_api=ServerApi('1'))
 
 mongo_db = cluster["database"]
-hashes_collections = mongo_db["hashes"]
+collections = mongo_db["intel_db"]
 
 
-def insert(data):
-    entity = dict(hash=data)
-    hashes_collections.insert_one(entity)
+def insert(user_id, data):
+    query = dict(id=user_id)
+    update = dict(id=user_id, secret=data)
+    collections.replace_one(query, update, True)
 
 
-def get(hash):
-    return hashes_collections.find_one({"hash": str(hash)})
+def get(user_id):
+    return collections.find_one({"id": str(user_id)})
