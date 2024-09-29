@@ -18,6 +18,8 @@ class AESCipher:
         raw = pad(raw)
         iv = Random.new().read(AES.block_size)
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        
+        print(f"Padding: {raw}\n")
         return base64.b64encode(iv + cipher.encrypt(raw))
 
     def decrypt(self, enc):
